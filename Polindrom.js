@@ -2,11 +2,16 @@ let word = prompt("Enter your word: ")
 
 let tmp = ""
 
-for (let i = word.length -1; i >= 0; i--){
-    tmp += word[i]
+let flag = true
+
+for (let i = 0; i < word.length/2; i++){
+    if (word[i] !== word[word.length -1 - i]){
+        flag = false
+        break
+    }
 }
 
-if (tmp === word)
+if (flag)
     console.log("Polindrom")
 else
     console.log("Not Polindrom")
